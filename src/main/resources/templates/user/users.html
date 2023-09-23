@@ -36,7 +36,8 @@
                     <a th:href="@{/user/edit/{id}(id=${user.id})}" type="button" class="btn btn-warning">Edit</a>
                 </td>
                 <td>
-                    <a th:if="${user.getRoles().size() < 2}" th:href="@{/user/delete/{id}(id=${user.id})}" type="button" class="btn btn-danger">Delete</a>
+                    <a th:if="${user.getRoles().size() < 2}" th:href="@{/user/delete/{id}(id=${user.id})}" type="button"
+                       class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                 </td>
             </tr>
             </tbody>
