@@ -10,4 +10,4 @@ DB_PASSWORD = 1111
 To run this application you should run FinalProjectApplication.java. This app will then be available at localhost:9999.
 
 Deployed app:
-https://noteproject-n7yejbmziq-lm.a.run.app/
+
