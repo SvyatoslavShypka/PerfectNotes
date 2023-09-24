@@ -31,7 +31,7 @@
     </div>
 </div>
 <div th:unless="${notes.empty}">
-    <h2 th:text="'My notes - ' + ${notes.getContent().size()}"></h2>
+    <h2 th:text="'My notes - ' + ${notes.getContent().size()} + '  of  ' + ${notes.totalElements}"></h2>
 
     <div>
         <a href="/note/create" class="btn btn-dark">Create new note</a>

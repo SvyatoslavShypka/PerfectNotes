@@ -42,7 +42,8 @@ public class Note {
     private Access access;
 
     @NotNull
-    @ManyToOne(optional = false)
+//    @ManyToOne(optional = false)
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 }
