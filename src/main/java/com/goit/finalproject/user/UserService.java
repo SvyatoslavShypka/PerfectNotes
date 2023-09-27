@@ -29,6 +29,7 @@ public class UserService implements UserDetailsService {
     private final UserMapper userMapper;
 
     public Page<User> listAll(Pageable pageable) {
+        System.out.println("AllUsersAmount: " + userRepository.findAll().size());
         return userRepository.findAll(pageable);
     }
 

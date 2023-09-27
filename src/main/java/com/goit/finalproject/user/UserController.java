@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -25,7 +26,7 @@ public class UserController {
     @GetMapping("/users")
     public ModelAndView showAllUsers(
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size) {
+            @RequestParam(defaultValue = "5") int size) {
         log.info("show users for {}", userService.getUserId());
         return new ModelAndView("user/users")
                 .addObject("users", userService.listAll(PageRequest.of(page, size)));
