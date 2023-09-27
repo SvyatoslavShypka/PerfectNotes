@@ -14,7 +14,7 @@
 <div th:switch="${users.size}" >
     <h2 th:case="0" style="color: red">No users yet!</h2>
     <div th:case="*">
-        <h2 style="color: green" th:text="'User interface - users: ' + ${users.size}"></h2>
+        <h2 style="color: green" th:text="'User interface - users: ' + ${users.size} + '  of  ' + ${users.totalElements}"></h2>
         <div>
             <a type="button" class="btn btn-success"  th:href="@{/user/addUser}">Add a new user</a>
             <a type="button" class="btn btn-secondary" th:href="@{/note/list}">Back to the note's list</a>
@@ -36,7 +36,8 @@
                     <a th:href="@{/user/edit/{id}(id=${user.id})}" type="button" class="btn btn-warning">Edit</a>
                 </td>
                 <td>
-                    <a th:if="${user.getRoles().size() < 2}" th:href="@{/user/delete/{id}(id=${user.id})}" type="button" class="btn btn-danger">Delete</a>
+                    <a th:if="${user.getRoles().size() < 2}" th:href="@{/user/delete/{id}(id=${user.id})}" type="button"
+                       class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                 </td>
             </tr>
             </tbody>
