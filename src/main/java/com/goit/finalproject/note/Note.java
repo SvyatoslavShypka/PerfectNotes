@@ -39,7 +39,6 @@ public class Note {
     private String content;
 
     @Enumerated(EnumType.STRING)
-
     private Access access;
 
     @NotNull
