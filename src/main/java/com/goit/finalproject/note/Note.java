@@ -28,6 +28,7 @@ import org.hibernate.validator.constraints.Length;
 @Table(name = "note")
 public class Note {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
